@@ -70,7 +70,7 @@ if __name__ == "__main__":
     )
 
     # Perform multiple charges
-    for val in range(1, 17):
+    for val in range(1, 6):
         prices = [val, 2 * val, 3 * val, 0]
         system.charge(prices)
 
@@ -80,6 +80,6 @@ if __name__ == "__main__":
     # Payment loop (for first 3 users)
     for i in range(3):
         while system.balances[i] > 5000:
-            system.make_payment([1000 if j == i else 0 for j in range(4)])
+            system.make_payment([10000 if j == i else 0 for j in range(4)])
             print(f"New Balance of {system.customers[i]} =",
                   system.balances[i])
